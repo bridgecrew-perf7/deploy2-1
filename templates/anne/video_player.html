@@ -1,0 +1,34 @@
+{% load static %}
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div style="width: 100%; height: auto">
+
+      {% video my_video.video%}
+      <br>
+      {{my_video.desc}}
+        <br>
+        {{my_video.added}}
+        <br>
+    </div>    
+        <!-- {% video my_video %}
+        {{my_video.url}} -->
+        
+    </div>
+
+    <hr><hr>
+    <div>
+      <a onclick="history.back()" class="pluudo_mid_icons">
+          <img src="../static/anne/Pluudo_Show_Text.png">
+        </a>
+  </div> 
+</body>
+</html>

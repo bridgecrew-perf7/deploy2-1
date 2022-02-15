@@ -1,0 +1,47 @@
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search Book Record</title>
+  </head>
+  <body>    
+    <div id="main">
+      <h2>Search Bar</h2>
+      <form class="" action="http://localhost:8000/search/" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="" value="Search">
+      </form>
+    </div>
+    <div>
+        <a onclick="history.back()" class="pluudo_mid_icons">
+            <img src="../static/anne/Pluudo_Search.png" alt="Pluudo_Search_icon">
+          </a>
+        kaise ho aap mil gyii video
+        <!-- {% video my_video %}
+        {{my_video.url}} -->
+        <!-- {{my_video.desc}}
+        <br>
+        {{my_video.added}}
+        <br>
+        {% video my_video.video %}
+        {{my_video.video.url}}
+        {{my_video.video.thumbnail}} -->
+    </div>
+    <div class="">
+
+      {% if items %}
+        {% for item in items %}
+          {% video item.video %}
+          {{item.desc}}
+          {{item.added}}
+          
+        {% endfor %}
+      {% endif %}
+      {% if not items %}
+      <p>No Record Found</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
